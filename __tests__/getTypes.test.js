@@ -19,10 +19,10 @@ test('getTypes 3', () => {
 
 test('getTypes 4', () => {
   const actual = getTypes(['/etc/hosts', '/undefined', '/etc/bashrc', '/etc']);
-  return expect(actual).resolves.toEqual(['file', null, 'file', 'directory']);
+  return expect(actual).resolves.toEqual(['file', null, null, 'directory']);
 });
 
 test('getTypes 5', () => {
   const actual = getTypes(['/undefined', '/etc/hosts', '/et', '/etc/bashrc']);
-  return expect(actual).resolves.toEqual([null, 'file', null, 'file']);
+  return expect(actual).resolves.toEqual([null, 'file', null, null]);
 });
